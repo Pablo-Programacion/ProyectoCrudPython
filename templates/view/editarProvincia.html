@@ -1,0 +1,15 @@
+Edición de Provincias
+{% for provincia in provincia %}
+<form action="/actualizarProvincia" method="post" enctype="multipart/form-data">
+    Codigo:
+    <input type="text" value="{{provincia[0]}}" name="txtCodigo" id="txtCodigo" readonly>
+    <br>
+    Provincia:
+    <input type="text" value="{{provincia[1]}}" name="txtProvincia" id="txtProvincia">
+    <br>
+    <br>
+    <input type="submit" value="Actualizar">
+</form>
+
+
+{% endfor %}

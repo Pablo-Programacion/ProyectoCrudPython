@@ -1,0 +1,14 @@
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('15', '112323');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('2', '1312');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('3', '11123233');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('4', '15123623');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('5', '14126456364563');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('6', '14512364623');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('7', '1451236456564564456455623');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('8', '124512364563');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('9', '12412453453');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('10', '1644565623');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('11', '1245456643');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('12', '1564545645623');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('13', '145264563');
+INSERT INTO `provincia` (`codigo`, `nombre`) VALUES ('14', '16456456623');
