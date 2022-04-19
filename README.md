@@ -4,7 +4,6 @@
 <p>Jinja2 Snippet Kit.</p>
 
 ## Librerias
-
 Usar package manager [pip](https://pip.pypa.io/en/stable/) para instalar librerias
 
 ```bash
