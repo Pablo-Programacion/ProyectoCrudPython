@@ -13,6 +13,12 @@ mysql.init_app(app)
 
 @app.route("/")
 def index():
+    
+    return render_template('view/index.html')
+
+
+@app.route("/provincia")
+def indexprovincia():
     sql = "SELECT * FROM provincia"
     conn = mysql.connect()
     cursor = conn.cursor()
@@ -33,7 +39,7 @@ def eliminar(codigo):
     cursor = conn.cursor()
     cursor.execute("DELETE FROM provincia where codigo = %s", (codigo))
     conn.commit()
-    return redirect('/')
+    return redirect('/provincia')
 
 
 @app.route('/editarProvincia/<int:codigo>')
@@ -51,12 +57,12 @@ def actualizarProvincia():
     _codigo = request.form['txtCodigo']
     _provincia = request.form['txtProvincia']
     sql = "UPDATE provincia SET nombre=%s where codigo=%s"
-    datos = (_provincia,_codigo)
+    datos = (_provincia, _codigo)
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute(sql, datos)
     conn.commit()
-    return redirect('/')
+    return redirect('/provincia')
 
 
 @app.route('/store', methods=['POST'])
@@ -69,7 +75,7 @@ def storage():
     cursor = conn.cursor()
     cursor.execute(sql, datos)
     conn.commit()
-    return render_template('view/indexProvincia.html')
+    return redirect('/provincia')
 
 
 if __name__ == '__main__':

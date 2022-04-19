@@ -1,36 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <table class="table table-light">
-        <thead class="thead-light">
-            <tr>
-                <th>Codigo</th>
-                <th>Provincia</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for provincia in provincia %}
-            <tr>
-                <td>{{provincia[0]}}</td>
-                <td>{{provincia[1]}}</td>
-                <td><a href="/editarProvincia/{{provincia[0]}}">Editar</a> |
-                    <a href="/eliminarProvincia/{{provincia[0]}}">Eliminar</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-</body>
-
-</html>
+{% include 'header.html' %}
+<br>
+<div style="text-align:center">
+    <a href="{{url_for('insertarprovincia')}}" class="btn btn-success">
+        INSERTAR PROVINCIA
+    </a>
+</div>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr class="bg-primary">
+            <th>Codigo</th>
+            <th>Provincia</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for provincia in provincia %}
+        <tr class="table-primary">
+            <td>{{provincia[0]}}</td>
+            <td>{{provincia[1]}}</td>
+            <td><a class="btn btn-light" href="/editarProvincia/{{provincia[0]}}">Editar</a> |
+                <a onclick="confirm('¿Estás seguro que quieres borrar el registro?')" class="btn btn-dark"
+                    href="/eliminarProvincia/{{provincia[0]}}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'footer.html' %}

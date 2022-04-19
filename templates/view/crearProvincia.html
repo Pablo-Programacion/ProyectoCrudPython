@@ -1,12 +1,19 @@
-
+{% include 'header.html' %}
+<br>
+<div style="text-align:center">
 <form action="/store" method="post" enctype="multipart/form-data">
-    Codigo:
-    <input type="text" name="txtCodigo" id="txtCodigo">
-    <br>
-    Provincia:
-    <input type="text" name="txtProvincia" id="txtProvincia">
-    <br>
-    <br>
-    <input type="submit" value="Insertar">
-</form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código<input type="text" name="txtCodigo" id="txtCodigo"></th>
+                <th text-right>Provincia<input type="text" name="txtProvincia" id="txtProvincia"></th>
+            </tr>
+            <tr>
 
+            </tr>
+        </thead>
+    </table>
+        <input type="submit" value="Insertar" class="btn btn-dark">
+</form>
+</div>
+{% include 'footer.html' %}
