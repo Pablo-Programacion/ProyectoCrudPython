@@ -1,6 +1,6 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 from flaskext.mysql import MySQL
+
 import ControladorODBC
 
 app = Flask(__name__)
@@ -21,3 +21,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
