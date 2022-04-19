@@ -1,3 +1,37 @@
-{% include 'header.html' %
+{% include 'header.html' %}
+<br>
+<div style="text-align:center">
+    <a href="{{url_for('insertarpaquete')}}" class="btn btn-success">
+        INSERTAR PAQUETE
+    </a>
+</div>
+<br>
 
+<table class="table table-hover">
+    <thead>
+        <tr class="bg-primary">
+            <th>Código</th>
+            <th>Descripción </th>
+            <th>Destinatario</th>
+            <th>Dirección</th>
+            <th>Código Provincia</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for paquete in paquete %}
+        <tr class="table-primary">
+            <td>{{paquete[0]}}</td>
+            <td>{{paquete[1]}}</td>
+            <td>{{paquete[2]}}</td>
+            <td>{{paquete[3]}}</td>
+            <td>{{paquete[4]}}</td>
+            <td><a class="btn btn-light" href="/editarPaquete/{{paquete[0]}}">Editar</a> |
+                <a onclick="confirm('¿Estás seguro que quieres borrar el registro?')" class="btn btn-dark"
+                    href="/eliminarPaquete/{{paquete[0]}}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% include 'footer.html' %}

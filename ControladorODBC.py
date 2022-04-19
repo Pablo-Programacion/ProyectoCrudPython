@@ -77,5 +77,24 @@ def storage():
     return redirect('/provincia')
 
 
+''' PAQUETES '''
+
+
+@app.route("/paquete")
+def indexpaquete():
+    sql = "SELECT * FROM paquete"
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    paquete = cursor.fetchall()
+    conn.commit()
+    return render_template('view/Paquete/indexPaquete.html', paquete=paquete)
+
+
+@app.route('/insertarpaquete')
+def insertarpaquete():
+    return render_template('view/Paquete/crearPaquete.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

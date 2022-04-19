@@ -1,0 +1,23 @@
+{% include 'header.html' %}
+<br>
+<div style="text-align:center">
+<form action="/store" method="post" enctype="multipart/form-data">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código<input type="text" name="txtCodigo" id="txtCodigo"></th>
+                <th></th>
+                <th text-right>Descripción<input type="text" name="txtProvincia" id="txtDescripcion"></th>
+            </tr>
+            <tr>
+                <th text-right>Destinatario<input type="text" name="txtProvincia" id="txtDestinatario"></th>
+                <th text-right>Dirección<input type="text" name="txtProvincia" id="txtdireccion"></th>
+                <th text-right>Provincia Código<input type="text" name="txtProvincia" id="txtProvincia"></th>
+            </tr>
+            </tr>
+        </thead>
+    </table>
+        <input type="submit" value="Insertar" class="btn btn-dark">
+</form>
+</div>
+{% include 'footer.html' %}
