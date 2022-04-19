@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+<br>
+<div style="text-align:center">
+    <a href="{{url_for('insertarcamionero')}}" class="btn btn-success">
+        INSERTAR CAMIONERO
+    </a>
+</div>
+<br>
+
+<table class="table table-hover">
+    <thead>
+        <tr class="bg-primary">
+            <th>DNI</th>
+            <th>Población</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Direccion</th>
+            <th>Salario</th>   
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for camionero in camionero %}
+        <tr class="table-primary">
+            <td>{{camionero[0]}}</td>
+            <td>{{camionero[1]}}</td>
+            <td>{{camionero[2]}}</td>
+            <td>{{camionero[3]}}</td>
+            <td>{{camionero[4]}}</td>
+            <td>{{camionero[5]}}</td>
+            <td><a class="btn btn-light" href="/editarCamionero2/{{camionero[0]}}">Editar</a> |
+                <a onclick="confirm('¿Estás seguro que quieres borrar el registro?')" class="btn btn-dark"
+                    href="/eliminarCamionero/{{camionero[0]}}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'footer.html' %}

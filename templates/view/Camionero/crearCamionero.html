@@ -1,0 +1,32 @@
+{% include 'header.html' %}
+<br>
+<div style="text-align:center">
+    <form action="/storecamionero" method="post" enctype="multipart/form-data">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>DNI<input type="text" name="txtDNI" id="txtDNI"></th>
+                </tr>
+                <tr>
+                    <th text-right>Población<input type="text" name="txtPoblacion" id="txtPoblacion"></th>
+                </tr>
+                <tr>
+                    <th text-right>Nombre<input type="text" name="txtNombre" id="txtNombre"></th>
+                </tr>
+                <tr>
+                    <th text-right>Teléfono<input type="text" name="txtTeléfono" id="txtTeléfono"></th>
+                </tr>
+                <tr>
+                    <th text-right>Dirección<input type="text" name="txtDireccion" id="txtDireccion">
+                    </th>
+                </tr>
+                <tr>
+                    <th text-right>Salario<input type="text" name="txtSalario" id="txtSalario">
+                    </th>
+                </tr>
+            </thead>
+        </table>
+        <input type="submit" value="Insertar" class="btn btn-dark">
+    </form>
+</div>
+{% include 'footer.html' %}

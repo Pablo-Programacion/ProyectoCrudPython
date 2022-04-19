@@ -1,0 +1,34 @@
+{% include 'header.html' %}
+<br>
+<div style="text-align:center">
+    <a href="{{url_for('insertarconduce')}}" class="btn btn-success">
+        INSERTAR CONDUCTORES
+    </a>
+</div>
+<br>
+
+<table class="table table-hover">
+    <thead>
+        <tr class="bg-primary">
+            <th>ID</th>
+            <th>DNI CAMIONERO [FK]</th>
+            <th>MATRICULA CAMIÓN [FK]</th>
+            <th>Acciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for conduce in conduce %}
+        <tr class="table-primary">
+            <td>{{conduce[0]}}</td>
+            <td>{{conduce[1]}}</td>
+            <td>{{conduce[2]}}</td>
+            <td><a class="btn btn-light" href="/editarConduce2/{{conduce[0]}}">Editar</a> |
+                <a onclick="confirm('¿Estás seguro que quieres borrar el registro?')" class="btn btn-dark"
+                    href="/eliminarConduce/{{conduce[0]}}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'footer.html' %}

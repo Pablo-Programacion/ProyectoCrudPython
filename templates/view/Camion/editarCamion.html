@@ -1,0 +1,16 @@
+{% include 'header.html' %}
+{% for conduce in conduce %}
+<form action="/actualizarConduce" method="post" enctype="multipart/form-data">
+    ID:
+    <input type="text" value="{{conduce[0]}}" name="txtID" id="txtID" readonly>
+    <br>
+    DNI:
+    <input type="text" value="{{conduce[1]}}" name="txtDNICAMIONERO" id="txtDNICAMIONERO">
+    <br>
+    Población:
+    <input type="text" value="{{conduce[2]}}" name="txtMATRICULACAMION" id="txtMATRICULACAMION">
+    <br>
+    <input type="submit" value="Actualizar">
+</form>
+{% endfor %}
+{% include 'footer.html' %}

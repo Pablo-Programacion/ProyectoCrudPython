@@ -1,0 +1,24 @@
+{% include 'header.html' %}
+{% for camionero in camionero %}
+<form action="/actualizarCamionero" method="post" enctype="multipart/form-data">
+    DNI:
+    <input type="text" value="{{camionero[0]}}" name="txtDNI" id="txtDNI" readonly>
+    <br>
+    Población:
+    <input type="text" value="{{camionero[1]}}" name="txtPoblacion" id="txtPoblacion">
+    <br>
+    Nombre:
+    <input type="text" value="{{camionero[2]}}" name="txtNombre" id="txtNombre">
+    <br>
+    Teléfono:
+    <input type="text" value="{{camionero[3]}}" name="txtTeléfono" id="txtTeléfono">
+    <br>
+    Direccion:
+    <input type="text" value="{{camionero[4]}}" name="txtDireccion" id="txtDireccion">
+    <br>
+    Salario:
+    <input type="text" value="{{camionero[5]}}" name="txtSalario" id="txtSalario">
+    <input type="submit" value="Actualizar">
+</form>
+{% endfor %}
+{% include 'footer.html' %}

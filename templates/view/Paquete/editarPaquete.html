@@ -1,13 +1,23 @@
 {% include 'header.html' %}
-{% for provincia in provincia %}
+{% for paquete in paquete %}
 <form action="/actualizarPaquete" method="post" enctype="multipart/form-data">
     Codigo:
-    <input type="text" value="{{provincia[0]}}" name="txtCodigo" id="txtCodigo" readonly>
+    <input type="text" value="{{paquete[0]}}" name="txtCodigo" id="txtCodigo" readonly>
     <br>
-    Provincia:
-    <input type="text" value="{{provincia[1]}}" name="txtProvincia" id="txtProvincia">
+    Paquete:
+    <input type="text" value="{{paquete[1]}}" name="txtDescripcion" id="txtDescripcion">
     <br>
+    Destinatario:
+    <input type="text" value="{{paquete[2]}}" name="txtDestinatario" id="txtDestinatario">
     <br>
+    Dirección:
+    <input type="text" value="{{paquete[3]}}" name="txtDireccion" id="txtDireccion">
+    <br>
+    Provincia Codigo [FK]:
+    <input type="text" value="{{paquete[4]}}" name="txtProvinciaCodigo" id="txtProvinciaCodigo">
+    <br>
+    Provincia Codigo [FK]:
+    <input type="text" value="{{paquete[5]}}" name="txtDniCamionero" id="txtDniCamionero">
     <input type="submit" value="Actualizar">
 </form>
 {% endfor %}
