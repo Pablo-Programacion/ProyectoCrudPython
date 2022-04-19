@@ -1,14 +1,22 @@
 {% include 'header.html' %}
 <br>
 <div style="text-align:center">
-    <form action="/storeconduce" method="post" enctype="multipart/form-data">
+    <form action="/storecamion" method="post" enctype="multipart/form-data">
         <table class="table">
             <thead>
                 <tr>
-                    <th>DNI CAMIONERO<input type="text" name="txtDNICAMIONERO" id="txtDNICAMIONERO"></th>
+                    <th>Matricula<input type="text" name="txtMatricula" id="txtMatricula"></th>
                 </tr>
                 <tr>
-                    <th text-right>MATRICULA CAMIÓN<input type="text" name="txtMATRICULACAMION" id="txtMATRICULACAMION">
+                    <th text-right>Potencia<input type="text" name="txtPotencia" id="txtPotencia">
+                    </th>
+                </tr>
+                <tr>
+                    <th text-right>Modelo<input type="text" name="txtModelo" id="txtModelo">
+                    </th>
+                </tr>
+                <tr>
+                    <th text-right>Tipo<input type="text" name="txtTipo" id="txtTipo">
                     </th>
                 </tr>
             </thead>

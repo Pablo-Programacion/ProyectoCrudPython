@@ -1,8 +1,8 @@
 {% include 'header.html' %}
 <br>
 <div style="text-align:center">
-    <a href="{{url_for('insertarconduce')}}" class="btn btn-success">
-        INSERTAR CONDUCTORES
+    <a href="{{url_for('insertarcamion')}}" class="btn btn-success">
+        INSERTAR CAMION
     </a>
 </div>
 <br>
@@ -10,22 +10,23 @@
 <table class="table table-hover">
     <thead>
         <tr class="bg-primary">
-            <th>ID</th>
-            <th>DNI CAMIONERO [FK]</th>
-            <th>MATRICULA CAMIÓN [FK]</th>
+            <th>Matricula</th>
+            <th>Potencia</th>
+            <th>Modelo</th>
+            <th>Tipo</th>
             <th>Acciones</th>
-
         </tr>
     </thead>
     <tbody>
-        {% for conduce in conduce %}
+        {% for camion in camion %}
         <tr class="table-primary">
-            <td>{{conduce[0]}}</td>
-            <td>{{conduce[1]}}</td>
-            <td>{{conduce[2]}}</td>
-            <td><a class="btn btn-light" href="/editarConduce2/{{conduce[0]}}">Editar</a> |
+            <td>{{camion[0]}}</td>
+            <td>{{camion[1]}}</td>
+            <td>{{camion[2]}}</td>
+            <td>{{camion[3]}}</td>
+            <td><a class="btn btn-light" href="/editarCamion2/{{camion[0]}}">Editar</a> |
                 <a onclick="confirm('¿Estás seguro que quieres borrar el registro?')" class="btn btn-dark"
-                    href="/eliminarConduce/{{conduce[0]}}">Eliminar</a>
+                    href="/eliminarCamion/{{camion[0]}}">Eliminar</a>
             </td>
         </tr>
         {% endfor %}

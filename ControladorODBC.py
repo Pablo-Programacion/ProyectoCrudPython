@@ -271,7 +271,7 @@ def actualizarConduce():
     _dniCAMIONERO = request.form['txtDNICAMIONERO']
     _matriculaCAMIONERO = request.form['txtMATRICULACAMION']
     sql = "UPDATE `conduce` SET `dni_camionero` = %s, `matricula_camion` = %s where ID = %s;"
-    datos = (_dniCAMIONERO, _matriculaCAMIONERO,_id)
+    datos = (_dniCAMIONERO, _matriculaCAMIONERO, _id)
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute(sql, datos)
@@ -287,6 +287,74 @@ def editar4(id):
     conduce = cursor.fetchall()
     conn.commit()
     return render_template('view/Conduce/editarConduce.html', conduce=conduce)
+
+
+''' CAMION '''
+
+
+@app.route("/camion")
+def indexcamion():
+    sql = "SELECT * FROM camion"
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    camion = cursor.fetchall()
+    conn.commit()
+    return render_template('view/Camion/indexCamion.html', camion=camion)
+
+
+@app.route('/insertarcamion')
+def insertarcamion():
+    return render_template('view/Camion/crearCamion.html')
+
+
+@app.route('/storecamion', methods=['POST'])
+def storage5():
+    _matricula = request.form['txtMatricula']
+    _potencia = request.form['txtPotencia']
+    _modelo = request.form['txtModelo']
+    _tipo = request.form['txtTipo']
+    datos = (_matricula, _potencia, _modelo, _tipo)
+    sql = "INSERT INTO `camion` (`matricula`, `potencia`, `modelo`, `tipo`) VALUES (%s, %s, %s, %s);"
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql, datos)
+    conn.commit()
+    return redirect('/camion')
+
+
+@app.route('/eliminarCamion/<string:matricula>')
+def eliminar5(matricula):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM camion where matricula = %s", (matricula))
+    conn.commit()
+    return redirect('/camion')
+
+
+@app.route('/actualizarCamion', methods=['POST'])
+def actualizarCamion():
+    _matricula = request.form['txtMatricula']
+    _potencia = request.form['txtPotencia']
+    _modelo = request.form['txtModelo']
+    _tipo = request.form['txtTipo']
+    datos = (_potencia, _modelo, _tipo, _matricula)
+    sql = "UPDATE `camion` SET `potencia` = %s, `modelo` = %s, `tipo` = %s where matricula = %s;"
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql, datos)
+    conn.commit()
+    return redirect('/camion')
+
+
+@app.route('/editarCamion2/<string:matricula>')
+def editar5(matricula):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM camion where matricula = %s", (matricula))
+    camion = cursor.fetchall()
+    conn.commit()
+    return render_template('view/Camion/editarCamion.html', camion=camion)
 
 
 if __name__ == '__main__':

@@ -1,14 +1,17 @@
 {% include 'header.html' %}
-{% for conduce in conduce %}
-<form action="/actualizarConduce" method="post" enctype="multipart/form-data">
-    ID:
-    <input type="text" value="{{conduce[0]}}" name="txtID" id="txtID" readonly>
+{% for camion in camion %}
+<form action="/actualizarCamion" method="post" enctype="multipart/form-data">
+    Matricula:
+    <input type="text" value="{{camion[0]}}" name="txtMatricula" id="txtMatricula" readonly>
     <br>
-    DNI:
-    <input type="text" value="{{conduce[1]}}" name="txtDNICAMIONERO" id="txtDNICAMIONERO">
+    Potencia:
+    <input type="text" value="{{camion[1]}}" name="txtPotencia" id="txtPotencia">
     <br>
-    Población:
-    <input type="text" value="{{conduce[2]}}" name="txtMATRICULACAMION" id="txtMATRICULACAMION">
+    Modelo:
+    <input type="text" value="{{camion[2]}}" name="txtModelo" id="txtModelo">
+    <br>
+    Tipo:
+    <input type="text" value="{{camion[3]}}" name="txtTipo" id="txtTipo">
     <br>
     <input type="submit" value="Actualizar">
 </form>
