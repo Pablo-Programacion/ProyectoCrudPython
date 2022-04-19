@@ -24,12 +24,12 @@ def indexprovincia():
     cursor.execute(sql)
     provincia = cursor.fetchall()
     conn.commit()
-    return render_template('view/indexProvincia.html', provincia=provincia)
+    return render_template('view/Provincia/indexProvincia.html', provincia=provincia)
 
 
 @app.route('/insertarprovincia')
 def insertarprovincia():
-    return render_template('view/crearProvincia.html')
+    return render_template('view/Provincia/crearProvincia.html')
 
 
 @app.route('/eliminarProvincia/<int:codigo>')
@@ -48,7 +48,7 @@ def editar(codigo):
     cursor.execute("SELECT * FROM provincia where codigo = %s", (codigo))
     provincia = cursor.fetchall()
     conn.commit()
-    return render_template('view/editarProvincia.html', provincia=provincia)
+    return render_template('view/Provincia/editarProvincia.html', provincia=provincia)
 
 
 @app.route('/actualizarProvincia', methods=['POST'])
