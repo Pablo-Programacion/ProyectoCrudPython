@@ -1,29 +1,28 @@
 {% include 'header.html' %}
 <br>
 <div style="text-align:center">
-    <form action="/store" method="post" enctype="multipart/form-data">
+    <form action="/storepaquete" method="post" enctype="multipart/form-data">
         <table class="table">
             <thead>
                 <tr>
                     <th>Código<input type="text" name="txtCodigo" id="txtCodigo"></th>
-
-
                 </tr>
                 <tr>
-                    <th text-right>Descripción<input type="text" name="txtProvincia" id="txtDescripcion"></th>
+                    <th text-right>Descripción<input type="text" name="txtDescripcion" id="txtDescripcion"></th>
                 </tr>
                 <tr>
-                    <th text-right>Destinatario<input type="text" name="txtProvincia" id="txtDestinatario"></th>
+                    <th text-right>Destinatario<input type="text" name="txtDestinatario" id="txtDestinatario"></th>
                 </tr>
                 <tr>
-                    <th text-right>Dirección<input type="text" name="txtProvincia" id="txtdireccion"></th>
+                    <th text-right>Dirección<input type="text" name="txtDireccion" id="txtDireccion"></th>
                 </tr>
                 <tr>
-
-
-                    <th text-right>Provincia Código<input type="text" name="txtProvincia" id="txtProvincia"></th>
+                    <th text-right>Provincia Código<input type="text" name="txtProvinciaCodigo" id="txtProvinciaCodigo">
+                    </th>
                 </tr>
-
+                <tr>
+                    <th text-right>Dni Camionero<input type="text" name="txtDniCamionero" id="txtDniCamionero">
+                    </th>
                 </tr>
             </thead>
         </table>

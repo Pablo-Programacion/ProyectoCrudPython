@@ -96,5 +96,37 @@ def insertarpaquete():
     return render_template('view/Paquete/crearPaquete.html')
 
 
+@app.route('/storepaquete', methods=['POST'])
+def storage2():
+    _codigo = request.form['txtCodigo']
+    _descripcion = request.form['txtDescripcion']
+    _destinatario = request.form['txtDestinatario']
+    _direccion = request.form['txtDireccion']
+    _codigo_provincia = request.form['txtProvinciaCodigo']
+    _dni_camionero = request.form['txtDniCamionero']
+    datos = (_codigo, _descripcion, _destinatario,
+             _direccion, _codigo_provincia, _dni_camionero)
+    print(datos)
+    sql = "INSERT INTO `paquete` (`codigo`, `descripcion`, `destinatario`, `direccion`, `codigo_provincia`, `dni_camionero`) VALUES (%s, %s, %s, %s, %s, %s);"
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql, datos)
+    conn.commit()
+    return redirect('/paquete')
+
+
+@app.route('/actualizarPaquete', methods=['POST'])
+def actualizarPaquete():
+    _codigo = request.form['txtCodigo']
+    _provincia = request.form['txtProvincia']
+    sql = "UPDATE provincia SET nombre=%s where codigo=%s"
+    datos = (_provincia, _codigo)
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql, datos)
+    conn.commit()
+    return redirect('/provincia')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

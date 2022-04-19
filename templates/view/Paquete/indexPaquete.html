@@ -15,6 +15,7 @@
             <th>Destinatario</th>
             <th>Dirección</th>
             <th>Código Provincia</th>
+            <th>Dni Camionero</th>   
             <th>Acciones</th>
         </tr>
     </thead>
@@ -26,6 +27,7 @@
             <td>{{paquete[2]}}</td>
             <td>{{paquete[3]}}</td>
             <td>{{paquete[4]}}</td>
+            <td>{{paquete[5]}}</td>
             <td><a class="btn btn-light" href="/editarPaquete/{{paquete[0]}}">Editar</a> |
                 <a onclick="confirm('¿Estás seguro que quieres borrar el registro?')" class="btn btn-dark"
                     href="/eliminarPaquete/{{paquete[0]}}">Eliminar</a>

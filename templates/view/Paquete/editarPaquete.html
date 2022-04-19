@@ -1,6 +1,6 @@
 {% include 'header.html' %}
 {% for provincia in provincia %}
-<form action="/actualizarProvincia" method="post" enctype="multipart/form-data">
+<form action="/actualizarPaquete" method="post" enctype="multipart/form-data">
     Codigo:
     <input type="text" value="{{provincia[0]}}" name="txtCodigo" id="txtCodigo" readonly>
     <br>
